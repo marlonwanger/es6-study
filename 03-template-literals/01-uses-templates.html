@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-<script>
-  const article = {
-    title: "Aprendendo ES6",
-    intro: "Uma breve explicação de como utilizar "
-  };
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const article = {
+      title: 'Aprendendo ES6',
+      intro: 'Uma breve explicação de como utilizar ',
+      body:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+      tags: ['es6', 'js', 'template-literal'],
+      author: 'Marlon'
+    };
 
+    function renderAuthor(name) {
+      return name ? name : 'unknown';
+    }
 
-</script>
+    const markup = `
+      <article>
+        <header>
+          <h1>${article.title}</h1>
+        </header>
+        <section>
+          <p>${article.intro}</p>
+        </section>
+        <footer>
+          <ul>
+            ${article.tags.map(tag => `<li>${tag}</li>`).join('')}
+          </ul>
+          <p>Author: ${renderAuthor(article.author)}</p>
+        </footer>
+      </article>
+    `;
+
+    document.body.innerHTML = markup;
+  </script>
 </html>
