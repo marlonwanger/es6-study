@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnOld">Make a Old Sandwich</button>
+    <button id="btn">Make a Sandwich</button>
+  </body>
+  <script>
+    const oldSandwich = {
+      bread: "white",
+      cheese: "cheedar",
+      prepare() {
+        return `I want a sandwich with ${this.bread} bread and ${this.cheese}`;
+      },
+      make() {
+        var that = this;
+        window.setTimeout(function() {
+          console.log(that.prepare());
+        }, 500);
+      }
+    };
+
+    const sandwich = {
+      bread: "white",
+      cheese: "cheedar",
+      prepare() {
+        return `I want a sandwich with ${this.bread} bread and ${this.cheese}`;
+      },
+      make() {
+        window.setTimeout(() => {
+          this.prepare();
+        }, 500);
+      }
+    };
+
+    const btn = document.getElementById("btn");
+    const btnOld = document.getElementById("btnOld");
+
+    btnOld.addEventListener("click", () => {
+      oldSandwich.make();
+    });
+
+    btn.addEventListener("click", function() {
+      sandwich.make();
+    });
+  </script>
+</html>

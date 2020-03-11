@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">Click</button>
+  <button id="btn2">Click2</button>
+</body>
+  <script>
+      // com function normal o this é referente a ele mesmo nesse caso o botao
+      const btn = document.getElementById('btn');
+      btn.addEventListener('click', function() {
+        console.log(this);
+      });
+
+      // com arrow function o this é referente ao scope inteiro , nesse caso a window
+      const btn2 = document.getElementById('btn2');
+      btn2.addEventListener('click', () => {
+        console.log(this);
+      })
+  </script>
+</html>
