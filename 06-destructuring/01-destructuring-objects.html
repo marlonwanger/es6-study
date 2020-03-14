@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const person = {
+      name: 'Marlon',
+      age: 28,
+      blog: 'marlon.com.br',
+      social: {
+        twitter: '@marlonw',
+        facebook: '/marlonwanger'
+      }
+    };
+
+    const { name, age } = person;
+    console.log(name, age);
+
+    const { facebook, twitter } = person.social;
+    console.log(facebook, twitter);
+
+    const { facebook: fb } = person.social;
+    console.log(fb);
+
+    const { city = 'Cacoal' } = person;
+    console.log(city);
+  </script>
+</html>
